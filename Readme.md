@@ -14,7 +14,7 @@ require! <[ livescript livescript-transform-object-create]>
 
 installing inside custom livescript implementation
 ```livescript
-require! <[ livescript livescript-transform-object-create/plugin]>
+require! <[ livescript livescript-transform-object-create/lib/plugin]>
 plugin.install livescript
 livescript.compile source-code
 ```
