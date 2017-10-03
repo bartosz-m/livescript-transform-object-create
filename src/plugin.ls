@@ -2,7 +2,14 @@ require! {
     \livescript-ast-transform
 }
 
-replace-child-with = (parent, child, new-child) ->
+replace-child-with = (parent, name, index, new-child) ->
+    if name?
+        if index?
+        then parent[name][index] = new-child
+        else parent[name] = new-child
+    else if index? => parent[index] = new-child
+    else throw Erron "Dont't know how to replace child at name:#{name} index:#{index}"
+
 copy-code-location = (src, dest) !->
     dest{first-line,first-column,last-line,last-column,line,column} = src
 
@@ -42,7 +49,7 @@ Plugin = Object.create livescript-ast-transform
                 _call = new Call [child.it]
                 new-node = new Chain _Object, [_create, _call]
                     copy-code-location child, ..
-                parent[name][index] = new-node
+                replace-child-with parent, name, index, new-node
             null
         root.traverse-children visit, true
         result ? false
