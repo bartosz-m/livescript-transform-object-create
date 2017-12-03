@@ -5,6 +5,7 @@ require! <[
     livescript-compiler/lib/livescript/Compiler
     ../src/plugin
 ]>
+
 livescript.lexer = lexer
 compiler = Compiler.create {livescript}
 plugin.install compiler

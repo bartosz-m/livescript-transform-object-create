@@ -22,7 +22,3 @@ for test in tests
     expected-js-code = fs.read-file-sync expected-file, \utf8
     js-code = child_process.exec-sync command, process-config .to-string!
     assert.equal js-code, expected-js-code
-# 
-# expected = fs.read-file-sync
-# assert 
-# console.log "" + child_process.exec-sync command, cwd: package-dir
