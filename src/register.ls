@@ -1,4 +1,4 @@
-require! <[
+import <[
     livescript
     livescript/lib/lexer
     livescript-compiler/lib/livescript/Compiler

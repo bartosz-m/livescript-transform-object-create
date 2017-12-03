@@ -6,7 +6,7 @@ require! <[
 ]>
 package-dir = path.dirname __dirname
 data-dir = path.join __dirname, 'data'
-get-command = -> "node_modules/.bin/lsc -r ./src/register -cbp #{it}"
+get-command = -> "node_modules/.bin/lsc -r ./register -cbp #{it}"
 
 files = fs.readdir-sync data-dir
 tests = files.filter -> 

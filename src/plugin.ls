@@ -1,1 +1,2 @@
-module.exports = require './transform-object-create'
+import './transform-object-create'
+export default transform-object-create

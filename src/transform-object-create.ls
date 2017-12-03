@@ -1,9 +1,9 @@
-require! {
+import
     \livescript-compiler/lib/livescript/ast/symbols : { type }
     \livescript-compiler/lib/livescript/Plugin
     \livescript-compiler/lib/nodes/symbols : {copy}
     \livescript-compiler/lib/nodes/JsNode
-}
+
 
 replace-child-with = (parent, name, index, new-child) ->
     if name?
@@ -36,9 +36,7 @@ replace-unary-clone-with-object-create = JsNode[copy]!
         root.traverse-children visit, true
         root
 
-transform-object-create = Object.create Plugin
-    module.exports = ..
-
+export default transform-object-create = Object.create Plugin
     ..name = 'transform-object-create'
 
     ..enable = !->
