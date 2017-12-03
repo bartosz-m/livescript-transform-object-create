@@ -9,7 +9,7 @@ Assuming you have file name app.ls
 
 simple use  
 ```livescript
-require! <[ livescript livescript-transform-object-create]>
+require! <[ livescript livescript-transform-object-create/register]>
 ```
 
 installing inside custom livescript implementation
@@ -31,12 +31,12 @@ But don't say I didn't warn you!
 
 compiling
 
-    lsc -cr livescript-transform-object-create app.ls
+    lsc -cr livescript-transform-object-create/register app.ls
 
 
 running
 
-    lsc -r livescript-transform-object-create app.ls
+    lsc -r livescript-transform-object-create/register app.ls
 
 
 # License
