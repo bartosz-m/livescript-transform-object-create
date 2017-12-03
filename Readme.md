@@ -7,16 +7,15 @@ This isn't real plugin because livescript doesn't have support for it. It's more
 # Usage
 Assuming you have file name app.ls
 
-simple use  
+simple use in livescript file
 ```livescript
-require! <[ livescript livescript-transform-object-create/register]>
+require! <[ livescript-transform-object-create/register main]>
 ```
 
-installing inside custom livescript implementation
-```livescript
-require! <[ livescript livescript-transform-object-create/lib/plugin]>
-plugin.install livescript
-livescript.compile source-code
+and in simple use in js file
+```js
+require ('livescript-transform-object-create/register')
+require ('main') // this is livescript file
 ```
 
 ## CLI
@@ -36,7 +35,7 @@ compiling
 
 running
 
-    lsc -r livescript-transform-object-create/register app.ls
+    node -r livescript-transform-object-create/register app.ls
 
 
 # License
