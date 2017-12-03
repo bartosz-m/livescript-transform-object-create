@@ -5,14 +5,15 @@
   "main": "lib/plugin.js",
   "scripts": {
     "prepublishOnly": "npm run build && npm run test",
-    "build": "node_modules/.bin/lsc dev/build",
+    "build": "node -r livescript-transform-esm/register/cjs ./dev/build",
     "develop": "node_modules/.bin/lsc dev/watch",
     "test": "node ./test"
   },
   "devDependencies": {
     "chokidar": "^1.7.0",
     "fs-extra": "^4.0.2",
-    "livescript": "git+https://github.com/gkz/LiveScript.git"
+    "livescript": "git+https://github.com/gkz/LiveScript.git",
+    "livescript-transform-esm": "^2.8.19"
   },
   "homepage": "https://gitlab.com/livescript-ide/livescript-plugins/transform-object-create",
   "repository": {

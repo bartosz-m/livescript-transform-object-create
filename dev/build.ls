@@ -1,5 +1,9 @@
-require! {
-    \./ls-compiler
-}
+config = import \../compiler.config
+import 
+    \livescript-system
 
-ls-compiler.watch = false
+livescript-system
+    ..watch = false
+    ..clean = true
+    ..config = config
+    ..build!

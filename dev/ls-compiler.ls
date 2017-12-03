@@ -3,7 +3,15 @@ require! {
     \chokidar
     \fs-extra : fs
     \livescript : livescript
+    \livescript/lib/lexer
+    \livescript-transform-esm/lib/plugin
+    \livescript-compiler/lib/livescript/Compiler
 }
+
+livescript.lexer = lexer
+my-compiler = Compiler.create {livescript}
+    ..install!
+    plugin.install ..
 
 absolute-path = -> path.normalize path.join __dirname, it
 
@@ -44,13 +52,14 @@ compile = (filepath) !->>
             filename: path.join \../src relative-path
             output-filename: relative-path.replace /.ls$/ '.js'
         console.log "compiling #relative-path"
-        js-result = ls-ast ls-code, options <<< default-options
-            ..source-map = ..map.to-JSON!
-            ..code += "\n//# sourceMappingURL=#relative-map-file\n"
+        # js-result = ls-ast ls-code, options <<< default-options
+        js-result = my-compiler.compile ls-code, options <<< default-options
+            # ..source-map = ..map.to-JSON!
+            # ..code += "\n//# sourceMappingURL=#relative-map-file\n"
         fs.output-file output, js-result.code
         fs.output-file map-file, JSON.stringify js-result.map.to-JSON!
     catch
-        console.error e.message
+        console.error e
     to-compile--
     set-watching watching
 
