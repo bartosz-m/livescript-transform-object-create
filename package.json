@@ -1,6 +1,6 @@
 {
   "name": "livescript-transform-object-create",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "description": "LiveScript plugin that converts unary operator ^^ to Object.create",
   "main": "lib/plugin.js",
   "scripts": {
