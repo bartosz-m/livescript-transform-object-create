@@ -22,6 +22,6 @@
   "author": "Bartosz Matuszewski",
   "license": "BSD-3-Clause",
   "dependencies": {
-    "livescript-ast-transform": "0.0.3"
+    "livescript-compiler": "0.0.24"
   }
 }
