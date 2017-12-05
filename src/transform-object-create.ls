@@ -1,8 +1,7 @@
 import
     \livescript-compiler/lib/livescript/ast/symbols : { type }
     \livescript-compiler/lib/livescript/Plugin
-    \livescript-compiler/lib/nodes/symbols : {copy}
-    \livescript-compiler/lib/nodes/JsNode
+    \js-nodes : {JsNode, symbols: {copy} }
 
 
 replace-child-with = (parent, name, index, new-child) ->
