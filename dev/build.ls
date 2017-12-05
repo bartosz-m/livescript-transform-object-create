@@ -1,4 +1,4 @@
-config = import \../compiler.config
+config = import \../.compiler.config
 import 
     \livescript-system
 
