@@ -1,6 +1,6 @@
-Transform plugin for [livescript](https://github.com/gkz/LiveScript)
+Transform plugin for [livescript](https://github.com/gkz/LiveScript) converts unary clone operator `^^` to `Object.create`
 
-Converts unary clone operator `^^` to `Object.create`
+**Repository** on [github](https://github.com/bartosz-m/livescript-transform-object-create)
 
 input
 ```livescript
@@ -13,8 +13,12 @@ var john;
 john = Object.create(Person);
 ```
 
+# Installation
+    
+    npm i -D livescript-transform-object-create 
+
+
 # Usage
-Assuming you have file name app.ls
 
 simple use in livescript file
 ```livescript
